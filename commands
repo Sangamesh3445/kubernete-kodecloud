@@ -1,0 +1,11 @@
+kubectl run pod-nginx --image=nginx:latest --dry-run=client -o yaml
+kubectl run pod-nginx --image=nginx:latest --dry-run=client -o yaml>pod.yaml
+vi pod.yaml
+kubectl create -f pod.yaml
+kubectl get pods
+kubectl describe pod pod-nginx
+kubectl create deployment httpd --image=httpd:latest
+kubectl get deployment
+kubectl create namespace dev
+k get namespaces
+kubectl run dev-nginx-pod -n dev --image=nginx:latest
